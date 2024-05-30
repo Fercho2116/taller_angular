@@ -1,0 +1,23 @@
+<h2>Lista de Personas</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Sexo</th>
+            <th>Estado Civil</th>
+            <th>Edad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(alumno of alumnos ; track alumno.persona){
+            <tr>
+                <td>{{alumno.persona[0]}}</td>
+                <td>{{alumno.persona[1]}}</td>
+                <td>{{alumno.persona[2]}}</td>
+                <td>{{alumno.persona[3]}}</td>
+            </tr>
+        }@empty{
+            Empty
+        }
+    </tbody>
+</table>
