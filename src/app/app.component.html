@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taller 7</title>
 </head>
+
 <body>
     <div class="container mt-5">
         <h1>Formulario de Registro</h1>
@@ -39,10 +41,28 @@
         </form>
 
         <app-lista-personas></app-lista-personas>
+
+        <!-- Gallery Section -->
+        <div class="container">
+            <h2 class="text-center">Galería</h2>
+            <div class="row">
+                @for (foto of fotos; track foto.id){
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="{{foto.url}}" class="img-fluid img-cover-2" alt="{{foto.id}}">
+                        <div class="card-body">
+                            <p class="card-text">{{foto.descripcion}}</p>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+        <app-contacto></app-contacto>
     </div>
-    <app-contacto></app-contacto>
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 </body>
+
 </html>
